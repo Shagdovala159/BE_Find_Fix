@@ -34,7 +34,7 @@ userController.registerUser = async (req, res) => {
     const userData = {
       email: email,
       password: hashedPassword,
-      role: role
+      role: role || 'customer'
     };
 
     await addDoc(collection(db, 'users'), userData);
